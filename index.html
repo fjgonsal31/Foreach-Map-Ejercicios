@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial: forEach y map en JavaScript</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <h1>Tutorial: forEach y map en JavaScript</h1>
+
+    <p><code>forEach</code> y <code>map</code> son dos métodos de array en JavaScript que te permiten iterar sobre los elementos de un array. Aunque similares en algunos aspectos, tienen diferencias importantes en su uso y en lo que devuelven.</p>
+
+    <h2>1. forEach</h2>
+    <p><code>forEach</code> es un método que ejecuta una función proporcionada una vez para cada elemento del array.</p>
+    
+    <h3>Sintaxis:</h3>
+    <div class="example">
+        <pre><code>array.forEach(function(currentValue, index, arr), thisValue)</code></pre>
+    </div>
+
+    <h3>Ejemplo de uso:</h3>
+    <div class="example">
+        <pre><code>const numeros = [1, 2, 3, 4, 5];
+
+numeros.forEach(function(numero) {
+    console.log(numero * 2);
+});
+
+// Imprime:
+// 2
+// 4
+// 6
+// 8
+// 10</code></pre>
+    </div>
+
+    <h3>Características principales:</h3>
+    <ul>
+        <li>No devuelve un nuevo array.</li>
+        <li>Es útil cuando quieres realizar una operación o efecto secundario para cada elemento del array.</li>
+        <li>No puedes detener la iteración (no puedes usar <code>break</code>).</li>
+    </ul>
+
+    <h2>2. map</h2>
+    <p><code>map</code> crea un nuevo array con los resultados de llamar a una función proporcionada en cada elemento del array original.</p>
+
+    <h3>Sintaxis:</h3>
+    <div class="example">
+        <pre><code>let nuevoArray = array.map(function(currentValue, index, arr), thisValue)</code></pre>
+    </div>
+
+    <h3>Ejemplo de uso:</h3>
+    <div class="example">
+        <pre><code>const numeros = [1, 2, 3, 4, 5];
+
+const numerosDuplicados = numeros.map(function(numero) {
+    return numero * 2;
+});
+
+console.log(numerosDuplicados);
+// Imprime: [2, 4, 6, 8, 10]</code></pre>
+    </div>
+
+    <h3>Características principales:</h3>
+    <ul>
+        <li>Devuelve un nuevo array con la misma longitud que el original.</li>
+        <li>Es útil cuando quieres transformar los elementos de un array.</li>
+        <li>No modifica el array original.</li>
+    </ul>
+
+    <h2>Comparación entre forEach y map</h2>
+    <table>
+        <tr>
+            <th>Característica</th>
+            <th>forEach</th>
+            <th>map</th>
+        </tr>
+        <tr>
+            <td>Valor de retorno</td>
+            <td>undefined</td>
+            <td>Nuevo array</td>
+        </tr>
+        <tr>
+            <td>Modifica el array original</td>
+            <td>No (pero puede modificar los elementos)</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Uso principal</td>
+            <td>Ejecutar una función para cada elemento</td>
+            <td>Transformar elementos y crear un nuevo array</td>
+        </tr>
+        <tr>
+            <td>Encadenable con otros métodos</td>
+            <td>No</td>
+            <td>Sí</td>
+        </tr>
+    </table>
+
+    <h2>Cuándo usar cada uno</h2>
+    <p><strong>Usa forEach cuando:</strong></p>
+    <ul>
+        <li>Quieres ejecutar código para cada elemento sin crear un nuevo array.</li>
+        <li>Estás realizando operaciones con efectos secundarios (como actualizar una base de datos).</li>
+        <li>No necesitas un nuevo array basado en el original.</li>
+    </ul>
+
+    <p><strong>Usa map cuando:</strong></p>
+    <ul>
+        <li>Quieres crear un nuevo array basado en el original.</li>
+        <li>Necesitas transformar cada elemento de un array de la misma manera.</li>
+        <li>Planeas usar el resultado en operaciones posteriores o encadenar con otros métodos de array.</li>
+    </ul>
+
+</body>
+</html>
